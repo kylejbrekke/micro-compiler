@@ -1,0 +1,24 @@
+PROGRAM p
+INT a
+INT b
+INT c
+
+DEF main0
+STOREI 20 a
+STOREI 30 b
+STOREI 40 c
+MULTI a b $tmp0
+ADDI c $tmp0 $tmp1
+MULTI a b $tmp2
+ADDI $tmp2 c $tmp3
+DIVI $tmp3 a $tmp4
+ADDI $tmp1 $tmp4 $tmp5
+ADDI $tmp5 20 c
+MULTI b b $tmp6
+ADDI $tmp6 a b
+MULTI b a $tmp7
+DIVI $tmp7 a a
+WRITEI c
+WRITEI b
+WRITEI a
+

@@ -1,0 +1,5 @@
+#!/bin/bash
+antlr4 -o src/Parser -package Parser -no-visitor src/Parser/little.g4
+javac -d out -cp dependencies/antlr-4.7.2-complete.jar src/*.java src/Parser/*.java src/SymbolTable/*.java src/Interpreter/AbstractParseTree/*.java src/Interpreter/CodeGeneration/*.java
+jar --create --file micro.jar --manifest MANIFEST.txt -C out/ .
+java -jar micro.jar "$1"
